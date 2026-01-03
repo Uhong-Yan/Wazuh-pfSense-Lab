@@ -18,7 +18,7 @@
 ### 1. 版本不一修正
 由於官方4.13.1版本下載受限，導致Agent無法安裝。將Wazuh Manager與Dashboard同步升級至**v4.14.1**，確保後端與pfSense Agent版本完全相容。
 
-![Wazuh 版本資訊](pfsense連到wazuh%20dashboard.png)
+![Wazuh 版本資訊](01_agent_active_v4141.png)
 *(圖：確認Agent版本為v4.14.1 且狀態為Active)*
 
 ### 2. 通訊協定校正 (TCP)
@@ -35,23 +35,23 @@
 為了辨識特定攻擊，在pfSense中撰寫了一條帶有學號的自訂規則：
 `alert tcp any any -> $HOME_NET any (msg:"412570182 Nmap Scan Detected"; flags:S; sid:1000001; rev:1;)`
 
-![自訂規則設定](自訂規則.png)
+![自訂規則設定](02_suricata_custom_rule.png)
 *(圖：自訂規則 msg:"412570182 Nmap Scan Detected")*
 
 ### 2. 發動攻擊行為 (Port Scan)
 使用Ubuntu Server對pfSense執行**Nmap SYN 掃描**。
 
-![Nmap 攻擊模擬](nmap.png)
+![Nmap 攻擊模擬](03_nmap_attack_simulation.png)
 *(圖：執行sudo nmap -sS 10.0.3.1進行掃描)*
 
 ### 3. 實驗成果證明
 
 * **pfSense 端**：Suricata Alerts 成功抓到掃描行為。
-![pfSense 警告紀錄](pfsense警告.png)
+![pfSense 警告紀錄](04_pfsense_suricata_alert.png)
 *(圖：pfSense介面顯示412570182警告訊息)*
 
 * **Wazuh 端**：Dashboard 成功接收到告警訊息，證明資料傳送管線完全暢通。
-![Wazuh 警告紀錄](pfsense%20agent警告.png)
+![Wazuh 警告紀錄](05_wazuh_dashboard_event.png)
 *(圖：Wazuh Dashboard接收到含有學號之警告事件)*
 
 ---
