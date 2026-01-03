@@ -50,7 +50,7 @@
 *(圖：pfSense 介面顯示 412570182 警告訊息)*
 
 * **Wazuh 端**：Dashboard 成功接收到告警訊息，證明資料傳送管線完全暢通。
-![Wazuh 警告紀錄](pfsense%20agent警告.jpg)
+![Wazuh 警告紀錄](pfsense%20agent警告.png)
 *(圖：Wazuh Dashboard 接收到含有學號之警告事件)*
 
 ---
