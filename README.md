@@ -27,9 +27,6 @@
 ### 3. 日誌路徑定位
 透過 `find` 指令精確找出 Suricata 生成的日誌真實路徑。
 
-![日誌路徑查詢](image_4e93a3.png)
-*(圖：定位 eve.json 位於 /var/log/suricata/suricata_em16826/)*
-
 ---
 
 ## 三、 攻擊模擬與偵測驗證
@@ -49,12 +46,12 @@
 ### 3. 實驗成果證明
 
 * **pfSense 端**：Suricata Alerts 成功抓到掃描行為。
-![pfSense 告警紀錄](pfsense警告.png)
-*(圖：pfSense 介面顯示 412570182 告警訊息)*
+![pfSense 警告紀錄](pfsense警告.png)
+*(圖：pfSense 介面顯示 412570182 警告訊息)*
 
 * **Wazuh 端**：Dashboard 成功接收到告警訊息，證明資料傳送管線完全暢通。
-![Wazuh 告警紀錄](pfsense%20agent警告.jpg)
-*(圖：Wazuh Dashboard 接收到含有學號之告警事件)*
+![Wazuh 警告紀錄](pfsense%20agent警告.jpg)
+*(圖：Wazuh Dashboard 接收到含有學號之警告事件)*
 
 ---
 
