@@ -1,0 +1,1 @@
+alert tcp any any -> $HOME_NET any (msg:"412570182 Nmap Scan Detected"; flags:S; sid:1000001; rev:1;
